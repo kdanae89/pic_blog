@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 //model controllers
+var postsController
 
 
 //render main page here, or i could do it in posts controller since they share an index page
