@@ -25,10 +25,9 @@ app.get('/', function(req, res){
 
 
 //mongoose connection
-
+mongoose.connect('mongodb://localhost:27017/blog');
 
 //test for connection
-mongoose.connect('mongodb://localhost:27017/blog');
 
 mongoose.connection.once('open', function(){
   console.log('mongooooo');
