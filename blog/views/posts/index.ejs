@@ -5,6 +5,26 @@
     <title></title>
   </head>
   <body>
-    <h1>Post Index maybe</h1>
+    <header>
+      <h1>User's Submissions</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Blog Home</a>
+          </li>
+          <li>
+            <a href="/posts/new">Submit a Photo</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <% for (var i = 0; i < post.length; i++) { %>
+          <h2><%=post[i].title%></h2>
+            <a href="/posts/<%=post[i]._id%>"><img src="<%=post[i].img%>"></a>
+            <p>Posted: <%=post[i].date%></p>
+        <% } %>
+      </ul>
+    </main>
   </body>
 </html>
