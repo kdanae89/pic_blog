@@ -13,14 +13,6 @@ router.get('/', function(req, res){
   });
 });
 
-//show route
-// router.get('/:id', function(req, res){
-//   User.findById(req.params.id, function(err, foundArticle){
-//     res.render('users/showu.ejs',{
-//       user: foundUser
-//     });
-//   });
-// });
 
 //new route
 router.get('/new', function(req, res){
@@ -31,6 +23,15 @@ router.get('/new', function(req, res){
 router.post('/', function(req, res){
   User.create(req.body, function(err, createdUser){
     res.redirect('/');
+  });
+});
+
+//show route
+router.get('/:id', function(req, res){
+  User.findById(req.params.id, function(err, foundUser){
+    res.render('users/show.ejs',{
+      user: foundUser
+    });
   });
 });
 

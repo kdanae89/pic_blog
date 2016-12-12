@@ -37,7 +37,7 @@ app.get('/', function(req, res){
 
 
 //mongoose connection
-mongoose.connect('mongodb://localhost:27017/blog');
+mongoose.connect('mongodb://localhost:27017/pic_blog');
 
 //test for connection
 
