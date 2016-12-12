@@ -11,11 +11,11 @@ var app = express();
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 
-// app.use(session({
-//     secret: "seymourbuttz",
-//     resave: false,
-//     saveUninitialized: false
-// }));
+app.use(session({
+    secret: "seymourbuttz",
+    resave: false,
+    saveUninitialized: false
+}));
 //
 //
 // //model controllers
@@ -24,6 +24,9 @@ app.use('/posts', postsController);
 
 var usersController = require('./controllers/users.js');
 app.use('/users', usersController);
+
+var sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 //
 //
 // //render main page here, or i could do it in posts controller since they share an index page
@@ -34,6 +37,19 @@ app.get('/', function(req, res){
 
 
 //content for user or non user
+app.get('/', function(req, res){
+    res.render('index.ejs', {
+        currentUser: req.session.currentuser
+    });
+});
+
+// app.get('/app', function(req, res){
+//     if(req.session.currentuser){
+//         res.send('the party');
+//     } else {
+//         res.send('no party');
+//     }
+// });
 
 
 //mongoose connection
