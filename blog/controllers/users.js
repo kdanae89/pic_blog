@@ -29,6 +29,7 @@ router.post('/', function(req, res){
 //show route
 router.get('/:id', function(req, res){
   User.findById(req.params.id, function(err, foundUser){
+    if (err) {console.log(err)};
     res.render('users/show.ejs',{
       user: foundUser
     });

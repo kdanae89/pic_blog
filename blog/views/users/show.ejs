@@ -35,6 +35,32 @@ EDIT INFO/POSTS(if you der user) -->
     <title></title>
   </head>
   <body>
-    <h1>Users show</h1>
+    <header>
+      <h1><%=user.username%></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Blog Home</a>
+          </li>
+          <li>
+            <a href="/users">Back to Submitter Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2><%=user.username%>'s picture submissions will appear here in descending order by date.</h2>
+      </section>
+      <section>
+        <a href="/users/<%=user._id%>/edit">Edit My Info</a>
+      </section>
+      <section>
+        <form action="/users/<%=user._id%>?_method=DELETE" method="post">
+  					<input type="submit" value="Delete My Info"/>
+        </form>
+      </section>
+    </main>
+
   </body>
 </html>
