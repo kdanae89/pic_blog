@@ -15,6 +15,26 @@ edit about me (if.................) -->
     <title></title>
   </head>
   <body>
-    <h1>Users Edit</h1>
+    <header>
+      <h1>Edit your info</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/users">Submitters Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2><%=user.username%>'s Info</h2>
+      <form action="/users/<%=user._id%>?_method=PUT" method="POST">
+              <input type="text" name="username" value="<%=user.username%>"/></br>
+              <input type="password" name="password"/></br>
+              <input type="submit" value="Update User"/>
+      </form>
+    </main>
   </body>
 </html>
