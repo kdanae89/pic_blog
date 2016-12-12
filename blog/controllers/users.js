@@ -5,13 +5,13 @@ var User = require('../models/users.js');
 
 
 //index route
-// router.get('/', function(req, res){
-//   User.find({}, function(err, foundUsers){
-//     res.render('users/indexu.ejs',{
-//       users: foundUsers
-//     });
-//   });
-// });
+router.get('/', function(req, res){
+  User.find({}, function(err, foundUsers){
+    res.render('users/index.ejs',{
+      users: foundUsers
+    });
+  });
+});
 
 //show route
 // router.get('/:id', function(req, res){
