@@ -1,4 +1,4 @@
-<!-- input name
+<!-- input username and password
 
 
 
@@ -25,7 +25,14 @@ text input for about me(if time) -->
     <title></title>
   </head>
   <body>
-    <h1>YOOOOO</h1>
+    <header>
+      <h1>Welcome to (Blog Name)!</h1>
+    </header>
+    <form action="/users" method="POST">
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" />
+            <input type="submit" value="Create User" />
+    </form>
 
   </body>
 </html>

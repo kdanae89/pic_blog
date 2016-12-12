@@ -24,6 +24,27 @@
     <title></title>
   </head>
   <body>
-    <h1>Users Index<h1>
+    <header>
+      <h1>Meet the Talented Photographers</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Blog Home</a>
+          </li>
+          <li>
+            <a href="/users/new">Add your info</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <ul>
+        <% for(var i = 0; i < users.length; i++) { %>
+          <li>
+            <a href="/users/<%users[i]._id%>"><%=users[i].username%></a>
+          </li>
+        <% } %>
+      </ul>
+    </main>
   </body>
 </html>
