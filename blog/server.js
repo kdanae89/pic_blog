@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 var app = express();
+var port = process.env.PORT || 3000;
+var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pic_blog';
 
 
 //middlewares - body-parser, method-override, session
@@ -53,7 +55,7 @@ app.get('/', function(req, res){
 
 
 //mongoose connection
-mongoose.connect('mongodb://localhost:27017/pic_blog');
+mongoose.connect(mongoDBURI);
 
 //test for connection
 
@@ -64,6 +66,6 @@ mongoose.connection.once('open', function(){
 
 
 //listen to port
-app.listen(3000, function(){
-  console.log('suh dude');
+app.listen(port, function(){
+  console.log('listening ' + port);
 });
