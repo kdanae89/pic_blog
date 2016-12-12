@@ -31,12 +31,16 @@ text area (for image info) -->
         </ul>
       </nav>
     </header>
-    <form action="/posts" method="POST">
-            <input type="text" name="title" placeholder="title"/>
-            <input type="text" name="img" placeholder="img"/>
-            <input type="date" name="date" value="date"/>
-            <input type="submit" value="Create Post" />
-    </form>
-
+    <form action="/posts/" method="POST">
+                <select name="userId">
+                    <% for(var i = 0; i < users.length; i++) { %>
+                        <option value="<%=users[i]._id%>"><%=users[i].username%></option>
+                    <% } %>
+                </select><br/>
+                <input type="text" name="title" placeholder="title"/></br>
+                <input type="text" name="img" placeholder="img"/></br>
+                <input type="date" name="date" value="date"/></br>
+                <input type="submit" value="Create Article"/>
+            </form>
   </body>
 </html>

@@ -16,21 +16,28 @@ router.get('/', function(req, res){
 
 //new route
 router.get('/new', function(req, res){
-  res.render('posts/new.ejs');
+  User.find({}, function(err, allUsers){
+    res.render('posts/new.ejs', {
+      users: allUsers
+    });
+  });
 });
 
 //create
 router.post('/', function(req, res){
-  Post.create(req.body, function(err, createdPost){
-    res.redirect('/');
+  User.findById(req.body.userId, function(err, foundUser){
+    Post.create(req.body, function(err, createdPost){
+      foundUser.posts.push(createdPost);
+      foundUser.save(function(err, data){
+        res.redirect('/posts');
+      });
+    });
   });
 });
 
 //show
 router.get('/:id', function(req, res){
   Post.findById(req.params.id, function(err, foundPost){
-    console.log(foundPost);
-    if (err) {console.log(err)};
     res.render('posts/show.ejs',{
       post: foundPost
     });
@@ -47,7 +54,7 @@ router.get('/:id/edit', function(req, res){
   });
 });
 
-//post
+//update
 router.put('/:id', function(req, res){
   Post.findByIdAndUpdate(req.params.id, req. body, function(){
     res.redirect('/posts');
