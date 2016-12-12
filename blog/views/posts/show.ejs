@@ -39,6 +39,29 @@ EDIT(for the user only) -->
     <title></title>
   </head>
   <body>
-    <h1><%=post.title%></h1>
+    <header>
+      <h1><%=post.title%></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Blog Home</a>
+          </li>
+          <li>
+            <a href="/posts">Back to Image Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <img src="<%=post.img%>"/>
+      <section>
+        <a href="/posts/<%=post._id%>/edit">Edit My Info</a>
+      </section>
+      <section>
+        <form action="/posts/<%=post._id%>?_method=DELETE" method="post">
+  					<input type="submit" value="Delete My Info"/>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

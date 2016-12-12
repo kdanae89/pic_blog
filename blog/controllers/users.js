@@ -37,7 +37,7 @@ router.get('/:id', function(req, res){
   });
 });
 
-//edit route(might have to switch position of this)
+//edit route
 router.get('/:id/edit', function(req, res){
   User.findById(req.params.id, function(err, foundUser){
     res.render('users/edit.ejs', {
