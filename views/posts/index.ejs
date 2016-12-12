@@ -19,10 +19,14 @@
       </nav>
     </header>
     <main>
-        <% for (var i = 0; i < post.length; i++) { %>
-          <h2><%=post[i].title%></h2>
-            <a href="/posts/<%=post[i]._id%>"><img src="<%=post[i].img%>"></a>
-            <p>Posted: <%=post[i].date%></p>
+        <% for (var i = 0; i < posts.length; i++) { %>
+          <h2><%=posts[i].title%></h2>
+            <a href="/posts/<%=posts[i]._id%>"><img src="<%=posts[i].img%>"></a>
+            <% for (var j = 0; j < users.length; j++) { %>
+              <p>Posted By: <%=users[j].username%></p>
+            <% } %>
+            <p>on <%=posts[i].date%></p>
+
         <% } %>
       </ul>
     </main>

@@ -8,8 +8,11 @@ var User = require('../models/users.js');
 //index route
 router.get('/', function(req, res){
   Post.find({}, function(err, foundPosts){
-    res.render('posts/index.ejs',{
-      post: foundPosts
+    User.find({}, function(err, foundUsers){
+      res.render('posts/index.ejs', {
+        posts: foundPosts,
+        users: foundUsers
+      });
     });
   });
 });
