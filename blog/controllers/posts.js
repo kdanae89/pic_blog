@@ -39,10 +39,27 @@ router.get('/:id', function(req, res){
 
 
 //edit route(might have to switch position of this)
+router.get('/:id/edit', function(req, res){
+  Post.findById(req.params.id, function(err, foundPost){
+    res.render('posts/edit.ejs', {
+      post: foundPost
+    });
+  });
+});
 
 //post
+router.put('/:id', function(req, res){
+  Post.findByIdAndUpdate(req.params.id, req. body, function(){
+    res.redirect('/posts');
+  });
+});
 
 //delete route
+router.delete('/:id', function(req, res){
+  Post.findByIdAndRemove(req.params.id, function(){
+    res.redirect('/posts');
+  });
+});
 
 //export router
 module.exports = router;
