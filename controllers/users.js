@@ -30,10 +30,8 @@ router.post('/', function(req, res){
 //show route
 router.get('/:id', function(req, res){
   User.findById(req.params.id, function(err, foundUser){
-    console.log(foundUser);
-    if (err) {console.log(err)};
-    res.render('users/show.ejs',{
-      user: foundUser
+      res.render('users/show.ejs',{
+        user: foundUser
     });
   });
 });
@@ -55,9 +53,11 @@ router.put('/:id', function(req, res){
 });
 
 //delete route
-router.delete('/:id', function(req, res){
-  User.findByIdAndRemove(req.params.id, function(){
-    res.redirect('/users');
+router.delete('/:userId', function(req, res){
+  User.findByIdAndRemove(req.params.userId, function(err, foundUser){
+    Post.collection.remove({'userId':req.params.userId}, function(err, foundPosts){
+      res.redirect('/users');
+    });
   });
 });
 

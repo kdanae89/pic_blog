@@ -62,8 +62,14 @@ router.get('/:id/edit', function(req, res){
 
 //update
 router.put('/:id', function(req, res){
-  Post.findByIdAndUpdate(req.params.id, req. body, function(){
-    res.redirect('/posts');
+  Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, updatedPost){
+    User.findOne({'posts._id': req.params.id}, function(err, foundUser){
+      foundUser.posts.id(req.params.id).remove();
+      foundUser.posts.push(updatedPost);
+      foundUser.save(function(err, data){
+        res.redirect('/posts');
+      });
+    });
   });
 });
 

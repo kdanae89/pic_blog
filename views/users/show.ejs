@@ -50,7 +50,10 @@ EDIT INFO/POSTS(if you der user) -->
     </header>
     <main>
       <section>
-        <h2><%=user.username%>'s picture submissions will appear here in descending order by date.</h2>
+        <% for(var i = 0; i < user.posts.length; i++) { %>
+          <h2><%=user.posts[i].title%></h2>
+          <img src="<%=user.posts[i].img%>"/>
+        <% } %>
       </section>
       <section>
         <a href="/users/<%=user._id%>/edit">Edit My Info</a>
