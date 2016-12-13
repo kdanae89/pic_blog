@@ -4,6 +4,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
+var Post = require('./models/posts.js');
 var app = express();
 var port = process.env.PORT || 3000;
 var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pic_blog';
@@ -34,7 +35,11 @@ app.use('/sessions', sessionsController);
 // //render main page here, or i could do it in posts controller since they share an index page
 // //welcome current user if logged in
 app.get('/', function(req, res){
-  res.render('index.ejs');
+  Post.find({}, function(err, foundPosts){
+    res.render('index.ejs', {
+      posts: foundPosts
+    });
+  });
 });
 
 
