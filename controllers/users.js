@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/users.js');
+var Post = require('../models/posts.js');
 
 
 //index route

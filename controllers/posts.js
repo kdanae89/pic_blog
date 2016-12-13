@@ -41,8 +41,11 @@ router.post('/', function(req, res){
 //show
 router.get('/:id', function(req, res){
   Post.findById(req.params.id, function(err, foundPost){
-    res.render('posts/show.ejs',{
-      post: foundPost
+    User.findOne({'posts._id':req.params.id}, function(err, foundUser){
+      res.render('posts/show.ejs',{
+        post: foundPost,
+        user: foundUser
+      });
     });
   });
 });
