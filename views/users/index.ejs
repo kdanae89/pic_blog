@@ -21,6 +21,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/indexu.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <title></title>
   </head>
   <body>
@@ -28,11 +30,11 @@
       <h1>Meet the Talented Photographers</h1>
       <nav>
         <ul>
-          <li>
-            <a href="/">Blog Home</a>
+          <li class ="btn">
+            <a href="/">Home</a>
           </li>
-          <li>
-            <a href="/users/new">Add your info</a>
+          <li class ="btn">
+            <a href="/users/new">Add Your Info!</a>
           </li>
         </ul>
       </nav>
@@ -40,7 +42,7 @@
     <main>
       <ul>
         <% for(var i = 0; i < users.length; i++) { %>
-          <li>
+          <li class="you">
             <a href="/users/<%=users[i]._id%>"><%=users[i].username%></a>
           </li>
         <% } %>

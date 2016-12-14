@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+  background: url(http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/blue-camera-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #CCCCCC;
+}
+li {
+  list-style: none;
+}
+h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+  color: #333333;
+}
+header {
+  margin-bottom: 8em;
+}
+a {
+  text-decoration: none;
+  font-size: 40px;
+  color: #0011FF;
+}
+ul {
+  margin-top: -1em;
+}
+.you {
+  margin: 12px 0 12px 0;
+  font-family: 'Shadows Into Light', cursive;
+}
+.btn {
+  margin: 2em 5em 2em 5em;
+  display: inline-block;
+}
+.btn a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 22px;
+  background: #CCCCCC;
+  border: 1px solid black;
+  border-radius: 20%;
+  padding: 1px 10px 1px 10px;
+}
