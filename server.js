@@ -14,6 +14,7 @@ var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pic_blog'
 //middlewares - body-parser, method-override, session
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('public'));
 
 app.use(session({
     secret: "seymourbuttz",

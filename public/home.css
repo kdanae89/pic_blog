@@ -1,3 +1,17 @@
 body {
   text-align: center;
 }
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline-block;
+}
+img {
+  height: 35em;
+  width: 29%;
+  display: inline-block;
+}
+h1 {
+  font-size: 30px;
+}
