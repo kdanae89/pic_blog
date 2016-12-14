@@ -38,12 +38,12 @@ app.use('/sessions', sessionsController);
 // //welcome current user if logged in
 app.get('/', function(req, res){
   Post.find({}, function(err, foundPosts){
-    User.findOne({username:req.body.username}, function(err, foundUser){
+  //   User.findOne({username:req.body.username}, function(err, foundUser){
     res.render('index.ejs', {
       posts: foundPosts,
-      user: foundUser,
+      // user: foundUser,
       currentUser: req.session.currentuser
-      });
+    //   });
     });
   });
 });
@@ -51,14 +51,6 @@ app.get('/', function(req, res){
 
 //content for user or non user
 
-
-// app.get('/app', function(req, res){
-//     if(req.session.currentuser){
-//         res.send('the party');
-//     } else {
-//         res.send('no party');
-//     }
-// });
 
 
 //mongoose connection

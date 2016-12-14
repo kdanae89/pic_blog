@@ -30,7 +30,4 @@ header h2 {
 }
 .img:hover {
   border: 1px solid white;
-  position: relative;
-  height: 50em;
-  width: 40%;
 }
