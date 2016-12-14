@@ -30,6 +30,7 @@ all users link -->
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title></title>
   </head>
   <body>
@@ -40,20 +41,27 @@ all users link -->
     <nav>
       <ul>
         <li>
-          <a href="/users/new">Register!</a>
+          <a class="btn btn-primary" href="/users/new">Register!</a>
         </li>
         <li>
-          <a href="/sessions/new">Log In!</a>
+          <a class="btn btn-primary" href="/sessions/new">Log In!</a>
+        </li>
+        <% if(currentUser) { %>
+        <li>
+          <a class="btn btn-primary" href="/posts/new">New Post!</a>
         </li>
         <li>
-          <a href="/posts/new">New Post!</a>
+          <a class="btn btn-primary" href="/users">All Contributers</a>
         </li>
         <li>
-          <a href="/users">All Contributers</a>
+          <a class="btn btn-primary" href="/posts">All Submissions</a>
         </li>
-        <li>
-          <a href="/posts">All Submissions</a>
-        </li>
+          <li>
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" value="Logout"/>
+            </form>
+          </li>
+        <% } %>
       </ul>
     </nav>
     <main>

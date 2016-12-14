@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 var Post = require('./models/posts.js');
+var User = require('./models/users.js');
 var app = express();
 var port = process.env.PORT || 3000;
 var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pic_blog';
@@ -36,19 +37,18 @@ app.use('/sessions', sessionsController);
 // //welcome current user if logged in
 app.get('/', function(req, res){
   Post.find({}, function(err, foundPosts){
+    User.findOne({username:req.body.username}, function(err, foundUser){
     res.render('index.ejs', {
-      posts: foundPosts
+      posts: foundPosts,
+      currentUser: req.session.currentuser
+      });
     });
   });
 });
 
 
 //content for user or non user
-app.get('/', function(req, res){
-    res.render('index.ejs', {
-        currentUser: req.session.currentuser
-    });
-});
+
 
 // app.get('/app', function(req, res){
 //     if(req.session.currentuser){
