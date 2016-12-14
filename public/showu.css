@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+li{
+  display: inline-block;
+}
+img {
+  height: 35em;
+  width: 29%;
+  display: inline-block;
+}
+header h1 {
+  font-size: 50px;
+  font-family: 'Kaushan Script', cursive;
+}
+section h2 {
+  font-family: 'Shadows Into Light', cursive;
+}
+.body {
+  background: #CCCCCC;
+}
+.edit {
+  display: inline;
+}

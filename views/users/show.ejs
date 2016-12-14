@@ -32,18 +32,22 @@ EDIT INFO/POSTS(if you der user) -->
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/showu.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <title></title>
   </head>
-  <body>
+  <body class="body">
     <header>
       <h1><%=user.username%></h1>
       <nav>
         <ul>
           <li>
-            <a href="/">Blog Home</a>
+            <a class="btn btn-primary" href="/">Home</a>
           </li>
           <li>
-            <a href="/users">Back to Submitter Index</a>
+            <a class="btn btn-primary" href="/users">Back to User Index</a>
           </li>
         </ul>
       </nav>
@@ -57,7 +61,7 @@ EDIT INFO/POSTS(if you der user) -->
       </section>
       <% if(currentUser) { %>
       <section>
-        <a href="/users/<%=user._id%>/edit">Edit My Info</a>
+        <a class="btn btn-primary" href="/users/<%=user._id%>/edit">Edit My Info</a>
       </section>
       <section>
         <form action="/users/<%=user._id%>?_method=DELETE" method="post">
