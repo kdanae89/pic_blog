@@ -2,6 +2,16 @@ var express = require('express');
 var router = express.Router();
 var Post = require('../models/posts.js');
 var User = require('../models/users.js');
+var session = require('express-session');
+
+var sessionsController = require('./sessions.js');
+router.use('/sessions', sessionsController);
+
+router.use(session({
+    secret: "seymourbuttz",
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 //index route

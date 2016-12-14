@@ -22,6 +22,7 @@ router.post('/', function(req, res){
 });
 
 
+
 //terminate session
 router.delete('/', function(req, res){
   req.session.destroy(function(){
