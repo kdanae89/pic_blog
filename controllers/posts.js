@@ -4,15 +4,6 @@ var Post = require('../models/posts.js');
 var User = require('../models/users.js');
 var session = require('express-session');
 
-var sessionsController = require('./sessions.js');
-router.use('/sessions', sessionsController);
-
-router.use(session({
-    secret: "seymourbuttz",
-    resave: false,
-    saveUninitialized: false
-}));
-
 
 //index route
 router.get('/', function(req, res){
@@ -53,7 +44,8 @@ router.get('/:id', function(req, res){
     User.findOne({'posts._id':req.params.id}, function(err, foundUser){
       res.render('posts/show.ejs',{
         post: foundPost,
-        user: foundUser
+        user: foundUser,
+        currentUser: req.session.currentuser
       });
     });
   });

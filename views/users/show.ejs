@@ -55,6 +55,7 @@ EDIT INFO/POSTS(if you der user) -->
           <img src="<%=user.posts[i].img%>"/>
         <% } %>
       </section>
+      <% if(currentUser) { %>
       <section>
         <a href="/users/<%=user._id%>/edit">Edit My Info</a>
       </section>
@@ -63,6 +64,7 @@ EDIT INFO/POSTS(if you der user) -->
   					<input type="submit" value="Delete My Info"/>
         </form>
       </section>
+      <% } %>
     </main>
 
   </body>

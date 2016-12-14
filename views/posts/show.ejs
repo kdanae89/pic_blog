@@ -55,6 +55,7 @@ EDIT(for the user only) -->
     <main>
       <h2><%=user.username%></h2>
       <img src="<%=post.img%>"/>
+      <% if(currentUser) { %>
       <section>
         <a href="/posts/<%=post._id%>/edit">Edit My Info</a>
       </section>
@@ -63,6 +64,7 @@ EDIT(for the user only) -->
   					<input type="submit" value="Delete My Info"/>
         </form>
       </section>
+      <% } %>
     </main>
   </body>
 </html>

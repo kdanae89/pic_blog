@@ -23,7 +23,9 @@
           <h2><%=posts[i].title%></h2>
             <a href="/posts/<%=posts[i]._id%>"><img src="<%=posts[i].img%>"></a>
             <% for (var j = 0; j < users.length; j++) { %>
+              <% if(posts[i].userId == users[j]._id) { %>
               <p>Posted By: <%=users[j].username%></p>
+            <% } %>
             <% } %>
             <p>on <%=posts[i].date%></p>
         <% } %>

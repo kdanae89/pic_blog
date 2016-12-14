@@ -41,6 +41,7 @@ app.get('/', function(req, res){
     User.findOne({username:req.body.username}, function(err, foundUser){
     res.render('index.ejs', {
       posts: foundPosts,
+      user: foundUser,
       currentUser: req.session.currentuser
       });
     });
