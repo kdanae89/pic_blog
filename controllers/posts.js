@@ -13,7 +13,8 @@ router.get('/', function(req, res){
       res.render('posts/index.ejs', {
         posts: foundPosts,
         users: foundUsers,
-        moment: moment
+        moment: moment,
+        currentUser: req.session.currentuser
       });
     });
   });

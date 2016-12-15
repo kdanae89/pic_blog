@@ -60,13 +60,14 @@ EDIT(for the user only) -->
       <h2><%=user.username%></h2>
       <%=moment(post.date).format("MMM Do YY");%><br/>
       <img src="<%=post.img%>"/>
+      <br/>
       <% if(currentUser.username === user.username) { %>
-      <section>
+      <section class="grr">
         <a class="btn btn-primary" href="/posts/<%=post._id%>/edit">Edit My Info</a>
       </section>
-      <section>
+      <section class="grr">
         <form action="/posts/<%=post._id%>?_method=DELETE" method="post">
-  					<input type="submit" value="Delete My Info"/>
+  					<input class="btn btn-primary" type="submit" value="Delete My Info"/>
         </form>
       </section>
       <% } %>

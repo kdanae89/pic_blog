@@ -7,7 +7,9 @@ var postSchema = mongoose.Schema({
   userId: String,
   title: String,
   img: {type: String, required: true},
-  date: Date
+  date: Date,
+  description: String,
+  comments: [String]
 });
 
 //create model

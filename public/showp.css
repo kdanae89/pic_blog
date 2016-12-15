@@ -10,7 +10,7 @@ li{
 }
 img {
   height: 35em;
-  width: 29%;
+  width: 35%%;
   display: inline-block;
 }
 header h1 {
@@ -25,4 +25,8 @@ main h2 {
 }
 .edit {
   display: inline;
+}
+.grr {
+  display: inline-block;
+  margin: 1em;
 }
