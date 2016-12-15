@@ -59,7 +59,7 @@ EDIT INFO/POSTS(if you der user) -->
           <img src="<%=user.posts[i].img%>"/>
         <% } %>
       </section>
-      <% if(currentUser) { %>
+      <% if(currentUser.username === user.username) { %>
       <section>
         <a class="btn btn-primary" href="/users/<%=user._id%>/edit">Edit My Info</a>
       </section>
