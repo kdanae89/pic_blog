@@ -31,7 +31,7 @@
               <p>Posted By: <%=users[j].username%></p>
             <% } %>
             <% } %>
-            <p>on <%=posts[i].date%></p>
+            <p>On :<%=moment(posts.date).format("MMM Do YY");%></p><br/>
         <% } %>
       </ul>
     </main>

@@ -11,6 +11,7 @@ img {
   height: 35em;
   width: 29%;
   display: inline-block;
+  margin-bottom: 0.5em;
 }
 header h1 {
   font-size: 50px;

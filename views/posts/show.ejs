@@ -58,6 +58,7 @@ EDIT(for the user only) -->
     </header>
     <main>
       <h2><%=user.username%></h2>
+      <%=moment(post.date).format("MMM Do YY");%><br/>
       <img src="<%=post.img%>"/>
       <% if(currentUser.username === user.username) { %>
       <section>

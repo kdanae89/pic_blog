@@ -55,7 +55,9 @@ EDIT INFO/POSTS(if you der user) -->
     <main>
       <section>
         <% for(var i = 0; i < user.posts.length; i++) { %>
-          <h2><%=user.posts[i].title%></h2>
+          <hr/>
+          <h2><%=user.posts[i].title%> - <small><%=moment(user.posts[i].date).format("MMM Do YY");%></small></h2>
+          <hr/>
           <img src="<%=user.posts[i].img%>"/>
         <% } %>
       </section>

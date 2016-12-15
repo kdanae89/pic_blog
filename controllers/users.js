@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/users.js');
 var Post = require('../models/posts.js');
+var moment = require('moment');
 
 
 //index route
@@ -32,7 +33,8 @@ router.get('/:id', function(req, res){
   User.findById(req.params.id, function(err, foundUser){
       res.render('users/show.ejs',{
         user: foundUser,
-        currentUser: req.session.currentuser
+        currentUser: req.session.currentuser,
+        moment: moment
     });
   });
 });
