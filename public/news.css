@@ -1,4 +1,4 @@
-body {
+.body {
   text-align: center;
   background: url(http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/blue-camera-icon.png);
   background-repeat: no-repeat;
@@ -8,7 +8,7 @@ body {
 li {
   list-style: none;
 }
-h1 {
+header h1{
   font-family: 'Kaushan Script', cursive;
   font-size: 50px;
   color: #333333;
@@ -21,6 +21,7 @@ a {
   font-size: 1.3em;
   background: #DDDDDD;
   padding: 1px 10px 1px 10px;
+  margin-right: 1em;
 }
 header {
   margin-bottom: 8em;

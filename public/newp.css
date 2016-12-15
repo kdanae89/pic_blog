@@ -1,30 +1,28 @@
-body {
+.body {
   text-align: center;
-  background: url(http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/blue-camera-icon.png);
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #CCCCCC;
 }
 li {
   list-style: none;
 }
-h1 {
+header h1{
   font-family: 'Kaushan Script', cursive;
   font-size: 50px;
   color: #333333;
 }
 a {
-  text-decoration: none;
-  color: #000000;
-  border: 1px solid black;
-  border-radius: 19%;
-  font-size: 1.3em;
-  background: #DDDDDD;
-  padding: 1px 10px 1px 10px;
-}
-header {
-  margin-bottom: 8em;
+  margin-right: 2em;
 }
 ul {
   margin-top: -1em;
+}
+.form {
+  width: 25%;
+  margin: 2em 0 0 32em;
+}
+.header{
+  background: url(http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/blue-camera-icon.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 20em;
 }
