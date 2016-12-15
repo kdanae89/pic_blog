@@ -56,10 +56,13 @@ EDIT(for the user only) -->
         </ul>
       </nav>
     </header>
+    <hr>
     <main>
-      <h2><%=user.username%></h2>
-      <%=moment(post.date).format("MMM Do YY");%><br/>
-      <img src="<%=post.img%>"/>
+      <h2>Posted By: <%=user.username%></h2>
+      <h5>On <%=moment(post.date).format("MMM Do YY");%></h5><br/>
+      <img class="border" src="<%=post.img%>"/>
+      <br/>
+      <p class="bs"><%=post.description%></p>
       <br/>
       <% if(currentUser.username === user.username) { %>
       <section class="grr">

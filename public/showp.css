@@ -10,8 +10,9 @@ li{
 }
 img {
   height: 35em;
-  width: 35%%;
+  width: 55%;
   display: inline-block;
+  margin: 1em 0 1em 0;
 }
 header h1 {
   font-size: 50px;
@@ -19,6 +20,9 @@ header h1 {
 }
 main h2 {
   font-family: 'Shadows Into Light', cursive;
+}
+p {
+  background: #AAFFEE;
 }
 .body {
   background: #CCCCCC;
@@ -28,5 +32,14 @@ main h2 {
 }
 .grr {
   display: inline-block;
-  margin: 1em;
+}
+.bs {
+  width: 45%;
+  display: inline-block;
+  box-shadow: 10px 10px 5px #888888;
+  margin-bottom: 5em;
+  padding: 0.5em 0.5em;
+}
+.border {
+  border: 4px solid black;
 }
