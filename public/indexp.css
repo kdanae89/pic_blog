@@ -17,6 +17,7 @@ li {
 img {
   width: 100%;
   margin-bottom: 0.5em;
+  box-shadow: 10px 10px 5px #888888;
 }
 header h1 {
   font-size: 50px;
