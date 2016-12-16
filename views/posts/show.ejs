@@ -66,11 +66,11 @@ EDIT(for the user only) -->
       <br/>
       <% if(currentUser.username === user.username) { %>
       <section class="grr">
-        <a class="btn btn-primary" href="/posts/<%=post._id%>/edit">Edit My Info</a>
+        <a class="btn btn-primary" href="/posts/<%=post._id%>/edit">Edit My Post</a>
       </section>
       <section class="grr">
         <form action="/posts/<%=post._id%>?_method=DELETE" method="post">
-  					<input class="btn btn-primary" type="submit" value="Delete My Info"/>
+  					<input class="btn btn-primary" type="submit" value="Delete My Post"/>
         </form>
       </section>
       <% } %>
