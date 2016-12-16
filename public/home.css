@@ -7,10 +7,12 @@ ul {
 li {
   display: inline-block;
 }
+.div {
+  display: inline;
+}
 img {
-  height: 35em;
+  height: 35%;
   width: 29%;
-  display: inline-block;
   margin-bottom: 0.5em;
 }
 header h1 {
