@@ -22,29 +22,33 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/indexu.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <title></title>
   </head>
-  <body>
+  <body class="body">
     <header>
       <h1>Meet the Talented Photographers</h1>
       <nav>
         <ul>
-          <li class ="btn">
-            <a href="/">Home</a>
+          <li>
+            <a class="btn btn-primary" href="/">Home</a>
           </li>
-          <li class ="btn">
-            <a href="/users/new">Add Your Info!</a>
+          <li>
+            <a class="btn btn-primary" href="/users/new">Add Your Info!</a>
           </li>
         </ul>
       </nav>
     </header>
+    <hr>
     <main>
       <ul>
         <% for(var i = 0; i < users.length; i++) { %>
-          <li class="you">
-            <a href="/users/<%=users[i]._id%>"><%=users[i].username%></a>
-          </li>
+          <div class="bg-info">
+            <li class="you">
+              <a width="10px" href="/users/<%=users[i]._id%>"><%=users[i].username%></a>
+            </li>
+          </div>
         <% } %>
       </ul>
     </main>

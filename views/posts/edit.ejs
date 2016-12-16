@@ -21,28 +21,32 @@ DELETE BUTTON HURRRRR -->
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/editp.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <title></title>
   </head>
-  <body>
+  <body class="body">
     <header>
       <h1>Edit your post</h1>
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a class="btn btn-default" href="/">Home</a>
           </li>
           <li>
-            <a href="/posts">Posts Index</a>
+            <a class="btn btn-default" href="/posts">Posts Index</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <h2><%=post.title%><h2>
-        <form action="/posts/<%=post._id%>?_method=PUT" method="POST">
-                <input type="text" name="title" value="<%=post.title%>"/></br>
-                <input type="text" name="img" value="<%=post.img%>"/></br>
-                <input type="submit" value="Update Post"/>
+      <h2 class="you"><%=post.title%><h2>
+        <form class="form" action="/posts/<%=post._id%>?_method=PUT" method="POST">
+                <input type="text" class="form-control" name="title" value="<%=post.title%>"/></br>
+                <input type="text" class="form-control" name="img" value="<%=post.img%>"/></br>
+                <input class="btn btn-primary" type="submit" value="Update Post"/>
         </form>
       </main>
   </body>
