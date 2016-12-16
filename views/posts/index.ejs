@@ -27,12 +27,16 @@
         <% for (var i = 0; i < posts.length; i++) { %>
           <div class="col-md-6">
           <h2><%=posts[i].title%></h2>
-            <a href="/posts/<%=posts[i]._id%>"><img src="<%=posts[i].img%>"></a>
-            <% for (var j = 0; j < users.length; j++) { %>
-              <% if(posts[i].userId == users[j]._id) { %>
-              <p>Posted By: <%=users[j].username%></p>
-            <% } %>
-            <% } %>
+            <div class="div">
+              <a href="/posts/<%=posts[i]._id%>">
+                <img src="<%=posts[i].img%>">
+              </a>
+            </div>
+              <% for (var j = 0; j < users.length; j++) { %>
+                <% if(posts[i].userId == users[j]._id) { %>
+                  <p>Posted By: <%=users[j].username%></p>
+                <% } %>
+              <% } %>
             <p>On :<%=moment(posts.date).format("MMM Do YY");%></p><br/>
           </div>
         <% } %>
