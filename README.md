@@ -6,7 +6,7 @@ This is a website built for users to post and share photos. The user has the abi
 
 The site was built using node.js, mongoDB and mongoose. I intended to have used an API for the image uploading and sharing but didn't get to it. For now the images need to be hosted by another site (I use imgur, its free and easy) and then you post the image url into the input.
 
-As far as I know there are no bugs interfering with use, but there are a few things I would like to implement before use and that's password hashing for security and more user interactivity such as a comment section and like buttons. 
+There is one bug, if the user enters the wrong password, it breaks the app on heroku. Due to time constraints for this project, I'm moving forward but there are a few things I would have liked to do given more time, which is password hashing for security and more user interactivity such as a comment section and like buttons. 
 
 Here is a link to the site live and hosted on Heroku:
 
